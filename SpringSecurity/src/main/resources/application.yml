@@ -1,0 +1,29 @@
+server:
+  port: 7070
+  
+spring:  
+  datasource:
+    url: jdbc:h2:mem:tokendb
+    username: sa
+    password: password
+  sql:
+    init:
+      mode: always
+      
+   
+      
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    
+    
+application:
+  jwt:
+    secretKey : this-is-my-private-key
+    tokenPrefix: Bearer 
+    tokenExpirationAfterDays: 10
